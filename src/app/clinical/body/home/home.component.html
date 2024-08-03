@@ -1,0 +1,17 @@
+
+
+<div>
+    <span>Name</span>
+    <input type="text" name="name"  [(ngModel)]="name">
+    <button (click)="postAnaalysis()" >Enviar nombre</button>
+</div>
+
+<div *ngFor="let item of items" >
+    <p>Id:{{ item.analysisId }}</p>
+    <p>Name: {{ item.name }}</p>
+    <p>Estado: {{ item.state }}</p>
+    <p>Fecha: {{ item.auditCreateDate }}</p>
+</div>
+
+
+<p>home works!</p>
