@@ -29,14 +29,14 @@
     .row-middle{
         display: flex;
         flex-direction: column;
-        height: 70vh;
+        height: 60vh;
 
         justify-content: center;
     }
     .table{
         margin:auto;
-        height: 34vh;
-        width: 40vw ;
+        height: 42vh;
+        width: 48vw ;
         border: 1px solid white;
 
     }
@@ -52,7 +52,7 @@
         flex:1;
         display: flex;
         flex-direction: column;
-        height: 16vh;
+        height: 18vh;
     
         justify-content: center;
 
@@ -72,16 +72,17 @@
         
     }
     .border-middle{
-        margin-top: 40px;
-        flex:2;
+        margin-top: 80px;
+        flex:4;
         display: flex;
         flex-direction: column;
         height: auto;
         justify-content: center;
         text-align: end;
-        margin-right: 60px;
+ 
     }
     .text{
+        margin-left: 50px;
         font-family: monospace;
         font-size: 2rem;
         margin-top: 40px;
@@ -91,8 +92,8 @@
         font-size: 1.2rem;
     }
     .button{
-        margin-top: 40px;
-        margin-left: 150px;
+        margin-top: 20px;
+        margin-left: 170px;
         height: 30px;
         width: 80px;
         font-family: monospace;
@@ -108,11 +109,29 @@
         outline: none; 
         border: 1px solid rgb(114, 114, 114);
         padding: 4px;
-        width: 160px ;
+        width: 22vw ;
     }
+    .content-buttom{
+
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+    .row-family{
+    font-family: monospace;
+        font-size: 0.7rem;
+        margin-top: 2px;
+     
+}
 
 </style>
 
+
+
+
+<app-top-bar></app-top-bar>
 
 
 <div class="container">
@@ -126,17 +145,26 @@
        <div class="row-middle">
         <div class="table" >
             <div class="table-row" >
-                 <p class="text" >Este es el home</p>
+                 <p class="text" >Iniciar Sesión</p>
                     </div>
             <div class="table-row-2" >
                 <div class="border-medium" >
                     <div class="border" > </div>
-                    <div class="border-middle" >
-                        <p class="text-body">Email: <input class="type" type="text"> </p>
-                        <p class="text-body">Password: <input  class="type" type="text"> </p>
-                    <button class="button" >Ingresar</button>
-                </div>
-                    <div class="border" ><div></div></div>
+                    <div class="border-middle">
+                        <p class="text-body">
+                          Email: <input class="type" type="text" [(ngModel)]="email" name="email">
+                        </p>
+                        <p class="text-body">
+                          Password: <input class="type" autocomplete="new-password"  type="password" [(ngModel)]="password" name="password">
+                        </p>
+                        <div *ngIf="message" class="row-family">
+                            {{ message }}
+                          </div>
+                        <div class="content-button">
+                          <button class="button" (click)="login()">Ingresar</button>
+                        </div>
+                      </div>
+                    <div  class="border" ><div></div></div>
                 </div>
             </div>
         </div>

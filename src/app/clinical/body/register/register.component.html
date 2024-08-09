@@ -35,9 +35,10 @@
     }
     .table{
         margin:auto;
-        height: 34vh;
-        width: 40vw ;
-        border: 1px solid white;
+        height: auto;
+        min-height:60vh ;
+        width: 60vw ;
+
 
     }
     .table-row{
@@ -52,7 +53,7 @@
         flex:1;
         display: flex;
         flex-direction: column;
-        height: 16vh;
+        height: 28vh;
     
         justify-content: center;
 
@@ -72,47 +73,75 @@
         
     }
     .border-middle{
-        margin-top: 40px;
-        flex:2;
+ 
+        flex:4;
         display: flex;
         flex-direction: column;
         height: auto;
         justify-content: center;
         text-align: end;
-        margin-right: 60px;
+ 
     }
     .text{
         font-family: monospace;
         font-size: 2rem;
         margin-top: 40px;
+        margin-left: 160px;
     }
     .text-body{
         font-family: monospace;
         font-size: 1.2rem;
     }
+    .text-body-error{
+        font-family: monospace;
+        font-size: 0.9rem;
+        margin-bottom: 1px;
+        text-align: left;
+        margin-left: 240px;
+        width: 28vw  ;
+    }
     .button{
-        margin-top: 40px;
+ 
         margin-left: 150px;
         height: 30px;
         width: 80px;
         font-family: monospace;
         font-size: 0.8rem;
         background-color: rgb(46, 46, 46);
-        color: aliceblue;
+        color: rgb(255, 255, 255);
+        margin-top: 20px;
     }
     .type{
         font-family: monospace;
         font-size: 1rem;
         background-color: transparent;
-        color: white;
+        color: rgb(63, 63, 63);
         outline: none; 
         border: 1px solid rgb(114, 114, 114);
         padding: 4px;
-        width: 160px ;
+        width: 28vw ;
     }
+    .content-buttom{
 
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    }
+    .row-family{
+    font-family: monospace;
+        font-size: 0.7rem;
+        margin-top: 2px;
+     
+    }
+   
 </style>
 
+
+
+
+<app-top-bar></app-top-bar>
 
 
 <div class="container">
@@ -126,20 +155,31 @@
        <div class="row-middle">
         <div class="table" >
             <div class="table-row" >
-                 <p class="text" >Este es el home</p>
+                 <p class="text" >Crear una cuenta</p>
                     </div>
             <div class="table-row-2" >
                 <div class="border-medium" >
                     <div class="border" > </div>
                     <div class="border-middle" >
-                        <p class="text-body">Email: <input class="type" type="text"> </p>
-                        <p class="text-body">Password: <input  class="type" type="text"> </p>
-                    <button class="button" >Ingresar</button>
-                </div>
-                    <div class="border" ><div></div></div>
+                        <p class="text-body">Nombre: <input class="type" type="text" [(ngModel)]="user.firstName"></p>
+                        <p class="text-body">Apellido: <input class="type" type="text" [(ngModel)]="user.lastName"></p>
+                        <p class="text-body">Email: <input class="type" type="text" [(ngModel)]="user.email"></p>
+                        <p class="text-body">Password: <input autocomplete="new-password" class="type" type="password" name="password" [(ngModel)]="user.password"></p>
+
+                        <div class="content-button" >
+                            <button (click)="onSubmit()" class="button " >CREAR</button>
+                        </div>
+                    </div>
+                    <div  class="border" > 
+                        <div >
+                                             </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <p class="text-body-error mb-0 "  *ngFor="let error of errors">
+                - {{ error.ErrorMessage }}
+              </p>
+               </div>      
        </div>
        <div class="row"></div>  
      </div>
@@ -149,6 +189,7 @@
         <div class="row"></div>  
     </div>
 </div>
+
 
 
 

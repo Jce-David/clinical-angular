@@ -1,0 +1,141 @@
+    <style>
+/* Reset básico para eliminar márgenes y paddings predeterminados */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2e2e2e;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #343435;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4a4b4b;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+    </style>
+
+
+    <app-top-bar-user></app-top-bar-user>
+
+
+    <div class="container">
+ 
+    
+      <div class="box">
+        <input type="text" [(ngModel)]="name" placeholder="Nombre del Análisis">
+        <button (click)="postAnalysis()">Enviar</button>
+      </div>
+    
+      <div class="box">
+        <table>
+          <thead>
+            <tr>
+              <th *ngFor="let column of NameColums">{{ column }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{ item.analysisId }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.state }}</td>
+              <td>{{ item.auditCreateDate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="box">
+        <input type="number" [(ngModel)]="analysisIdNumber" placeholder="ID del Análisis">
+        <button (click)="getAnalysisById(analysisIdNumber)">Buscar por ID</button>
+      </div>
+    
+      <div class="box">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ itemId }}</td>
+              <td>{{ nameId }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>{{message}}</p>
+      </div>
+    </div>
+    
+    

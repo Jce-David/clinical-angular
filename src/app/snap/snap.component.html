@@ -1,0 +1,122 @@
+<style>
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 8px;
+    border: 1px solid black;
+    height: 120vh;
+}
+    
+.div1 {
+    grid-column: span 12 / span 12;
+    grid-row: span 1 / span 1;
+    border: 1px solid black;
+}
+
+.div2 {
+    grid-column: span 3 / span 3;
+    grid-row: span 7 / span 7;
+    grid-row-start: 2;
+    border: 1px solid black;
+}
+
+.div3 {
+    grid-column: span 3 / span 3;
+    grid-row: span 7 / span 7;
+    grid-column-start: 10;
+    grid-row-start: 2;
+    border: 1px solid black;
+}
+
+.div4 {
+    grid-column: span 12 / span 12;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 10;
+    border: 1px solid black;
+}
+
+.div5 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 5;
+    border: 1px solid black;
+}
+
+.div6 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 6;
+    border: 1px solid black;
+}
+
+.div7 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 7;
+    border: 1px solid black;
+}
+
+.div8 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 8;
+    border: 1px solid black;
+}
+
+.div9 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 4;
+    border: 1px solid black;
+}
+
+.div10 {
+    grid-row: span 7 / span 7;
+    grid-column-start: 4;
+    grid-row-start: 3;
+    border: 1px solid black;
+}
+
+.div11 {
+    grid-row: span 7 / span 7;
+    grid-column-start: 9;
+    grid-row-start: 3;
+    border: 1px solid black;
+}
+
+.div12 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 3;
+    border: 1px solid black;
+}
+
+.div13 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 9;
+    border: 1px solid black;
+}
+        
+</style>
+
+
+<div class="parent">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <div class="div5">5</div>
+    <div class="div6">6</div>
+    <div class="div7">7</div>
+    <div class="div8">8</div>
+    <div class="div9">9</div>
+    <div class="div10">10</div>
+    <div class="div11">11</div>
+    <div class="div12">12</div>
+    <div class="div13">13</div>
+</div>
+    

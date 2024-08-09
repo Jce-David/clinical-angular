@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+    color:rgb(41, 41, 41);
+    font-family: monospace;
+    margin: 20px;
+    background-color: #ffffff; /* Color de fondo de la página */
+  }
+body { margin: 0;     font-family: monospace; }

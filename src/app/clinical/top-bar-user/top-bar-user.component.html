@@ -6,7 +6,7 @@
     flex-direction: row;
     height: 9vh; /* Ajusta la altura del contenedor según sea necesario */
     width: 100%; /* Ajusta el ancho del contenedor según sea necesario */
-    border-bottom: 2px solid rgb(104, 102, 102);
+    border-bottom: 2px solid rgb(94, 93, 93);
     margin-top: 20px;
 
   }
@@ -51,17 +51,17 @@
 
     }
     .text{
-        text-align: center;
+        text-align:left; 
         flex: 1; /* Las columnas se expanden para ocupar el espacio disponible */
         font-family: monospace;
-        font-size: 0.9rem;
-        color: rgb(66, 66, 66);
+        font-size: 0.8rem;
+
         text-decoration: none;
+        border-left: 1px solid rgb(48, 48, 48);
+        margin-left: 4px;
+        width: 4rem;
     }
-    .text:hover {
-    color: rgb(89, 124, 75); /* Cambia el color al pasar el mouse por encima, si lo deseas */
-    text-decoration: none; /* Asegúrate de que no se subraye al pasar el mouse */
-}
+   
     .text-clinical{
         text-align: center;
         flex: 1; /* Las columnas se expanden para ocupar el espacio disponible */
@@ -69,6 +69,12 @@
         font-size: 2rem;
  
 
+    }
+    .text-sub{
+        margin-left: 20px;
+    }
+    .text-sub-sesion{
+        margin-left: 20px;
     }
   
 </style>
@@ -86,8 +92,16 @@
         </div>
         <div class="column"> 
             <div class="sub-container" >
-               <a  routerLink="/login"  class="text" >Iniciar sesión</a>
-               <a  routerLink="/register" class="text">Registrarse</a>
+                <div class="text" >
+                    <p class="text-sub" > {{currentUser?.lastName}} </p>    
+                    <p class="text-sub" >{{currentUser?.email}} </p>
+           
+                </div>
+                <div  class="text" >
+                    <div></div>
+                    <p class="text-sub-sesion mt-16 " > Cerrar Sesión </p>
+                </div>
+           
             </div>
         </div>
     </div>
